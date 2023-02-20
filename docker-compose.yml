@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  prisma-express-api:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: prisma-express-api
+      ports:
+        - "3000:3000"

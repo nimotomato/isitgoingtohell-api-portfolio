@@ -1,2 +1,2 @@
-# isitgoingtohell-api-portfolio
-Portfolio version API with express and prisma
+# isitgoingtohell-frontend-portfolio
+Front end for portfolioversion of isitgoingtohell

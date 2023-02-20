@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model news {
+  id         Int         @id @default(autoincrement())
+  createdat  DateTime    @default(now()) @db.Timestamp(6)
+  headline   String      @unique
+  date       DateTime    @db.Timestamp(6)
+  region     String      @db.VarChar(16)
+  source     String
+  sentiments sentiments?
+}
+
+model sentiments {
+  id      Int    @id @default(autoincrement())
+  label   String @db.VarChar(16)
+  score   Float
+  news_id Int?   @unique(map: "sentiments_newsid_key")
+  news    news?  @relation(fields: [news_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sentiments_newsid_fkey")
+}
