@@ -6,6 +6,8 @@ COPY package*.json ./
 
 COPY prisma ./prisma/
 
+# COPY server.key server.cert ./
+
 COPY .env ./
 
 COPY tsconfig.json ./

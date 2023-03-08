@@ -13,7 +13,6 @@ export default newsRouter.get("/", async (request: Request, response: Response) 
         // Call prisma query
         const dateRange = await datesService.getDates()
 
-
         return response.status(200).json(dateRange)
     } catch (error: any) {
         return response.status(500).json(error.message)

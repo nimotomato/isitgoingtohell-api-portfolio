@@ -5,7 +5,7 @@ import newsRouter from './news/news.router';
 import datesRouter from './news/dates.router';
 
 const app = express();
-
+const port = 3000;
 
 // Middleware
 app.use(cors());
@@ -21,6 +21,6 @@ app.use("/api/news", newsRouter);
 
 
 
-app.listen(Number(3000), () => {
-    console.log("Listening on port 3000");
+app.listen(port, () => {
+    console.log(`Listening on port${port}`);
 });
